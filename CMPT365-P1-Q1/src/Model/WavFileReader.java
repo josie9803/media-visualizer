@@ -1,3 +1,5 @@
+package Model;
+
 import java.io.File;
 import java.io.IOException;
 import javax.sound.sampled.*;
@@ -50,7 +52,6 @@ public class WavFileReader {
         return null;
     }
 
-    // Method to get the audio format of a WAV file
     public static AudioFormat getAudioFormat(File wavFile) {
         try {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(wavFile);
