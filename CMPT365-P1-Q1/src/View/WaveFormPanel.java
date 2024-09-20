@@ -44,12 +44,15 @@ public class WaveFormPanel extends JPanel {
         // Draw the right channel waveform (bottom) inside the black box
         g.setColor(Color.GREEN);
         drawWaveform(g, rightChannelSamples, boxX, boxY + halfHeight, halfHeight);
+
     }
 
 private void drawWaveform(Graphics g, int[] samples, int xOffset, int yOffset, int panelHeight) {
+    if (samples == null){
+        return;
+    }
     int panelWidth = getWidth() - 100;  // Adjust to match the smaller box width
     int midY = (panelHeight) / 2 + yOffset; // Middle of the box area for Y axis
-
     // Determine step size to fit the waveform in the box
     int step = Math.max(1, samples.length / panelWidth);
 
