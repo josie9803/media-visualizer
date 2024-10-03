@@ -1,14 +1,13 @@
 package View;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 public class WaveFormView {
-    private JFrame frame;
-    private JPanel mainPanel;
-    private JPanel buttonPanel;
-    private JButton openFileButton;
+    private final JFrame frame;
+    private final JPanel mainPanel;
+    private final JButton openFileButton;
     private WaveFormPanel waveformPanel;
 
     public WaveFormView() {
@@ -19,7 +18,7 @@ public class WaveFormView {
 
         // Setup panels and button
         mainPanel = new JPanel(new BorderLayout());
-        buttonPanel = new JPanel(new FlowLayout());
+        JPanel buttonPanel = new JPanel(new FlowLayout());
         openFileButton = new JButton("Open File");
 
         // Initialize empty waveform panel
@@ -36,7 +35,7 @@ public class WaveFormView {
         // Add the main panel to the frame
         frame.add(mainPanel);
     }
-    public void setOpenFileButtonListener(ActionListener listener) {
+    public void addOpenFileButtonListener(ActionListener listener) {
         openFileButton.addActionListener(listener);
     }
 
@@ -57,6 +56,16 @@ public class WaveFormView {
         frame.setVisible(true);
     }
 
+    public File showOpenFileDialog() {
+        JFileChooser fileChooser = new JFileChooser();
+        //fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("BMP Images", "bmp"));
+        fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("WAV Sound Files", "wav"));
+        int result = fileChooser.showOpenDialog(mainPanel);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            return fileChooser.getSelectedFile();
+        }
+        return null;
+    }
     public Component getMainPanel() {
         return mainPanel;
     }

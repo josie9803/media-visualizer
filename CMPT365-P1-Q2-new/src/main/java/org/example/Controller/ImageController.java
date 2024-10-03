@@ -8,21 +8,21 @@ import java.io.File;
 import java.io.IOException;
 
 public class ImageController {
-
     private final ImageModel model;
     private final ImageView view;
 
     public ImageController(ImageModel model, ImageView view) {
         this.model = model;
         this.view = view;
-
+        view.setVisible(true);
+    }
+    public void init(){
         view.addOpenFileListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                openFile();
+                handleFileOpen();
             }
         });
-
         view.addExitListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -30,7 +30,7 @@ public class ImageController {
             }
         });
     }
-    private void openFile() {
+    private void handleFileOpen() {
         File selectedFile = view.showOpenFileDialog();
         if (selectedFile != null) {
             try {

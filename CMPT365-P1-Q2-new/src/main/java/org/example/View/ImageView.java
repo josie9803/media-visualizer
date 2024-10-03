@@ -11,7 +11,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 public class ImageView extends JFrame {
-
     private final JLabel imageLabel;
     private JMenuItem openFileItem;
     private JMenuItem exitItem;

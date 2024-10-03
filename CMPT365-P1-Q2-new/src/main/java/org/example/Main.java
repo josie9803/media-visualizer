@@ -9,9 +9,8 @@ public class Main {
         SwingUtilities.invokeLater(() -> {
             ImageModel model = new ImageModel();
             ImageView view = new ImageView();
-            new ImageController(model, view);
-
-            view.setVisible(true);
+            ImageController controller = new ImageController(model, view);
+            controller.init();
         });
     }
 }

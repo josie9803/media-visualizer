@@ -1,13 +1,12 @@
 package View;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class WaveFormPanel extends JPanel {
-    private int[] leftChannelSamples;
-    private int[] rightChannelSamples;
-    private int sampleRate;
-    private int totalSamples;
+    private final int[] leftChannelSamples;
+    private final int[] rightChannelSamples;
+    private final int sampleRate;
+    private final int totalSamples;
 
     public WaveFormPanel(int[] leftChannelSamples, int[] rightChannelSamples, int sampleRate, int totalSamples) {
         this.leftChannelSamples = leftChannelSamples;
