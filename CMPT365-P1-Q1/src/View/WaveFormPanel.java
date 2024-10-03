@@ -57,7 +57,7 @@ private void drawWaveform(Graphics g, int[] samples, int xOffset, int yOffset, i
     int step = Math.max(1, samples.length / panelWidth);
 
     // Normalize the amplitude
-    double scale = (panelHeight / 2.0) / 32768.0;
+    double scale = (panelHeight / 2.0) / 32768.0; //15 bits
 
     // Draw the waveform within the specified box area
     for (int i = 0; i < panelWidth - 1; i++) {

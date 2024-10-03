@@ -24,6 +24,6 @@ public class ImageView extends JFrame {
     // Method to update the displayed image
     public void displayImage(BufferedImage image) {
         imageLabel.setIcon(new ImageIcon(image));
-        pack();  // Resize the window to fit the new image
+        //pack();  // Resize the window to fit the new image
     }
 }
