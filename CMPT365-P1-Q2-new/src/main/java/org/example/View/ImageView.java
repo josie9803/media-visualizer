@@ -69,11 +69,11 @@ public class ImageView extends JFrame {
         }
     }
 
-    public void addOpenFileListener(ActionListener listener) {
+    public void addOpenFileButtonListener(ActionListener listener) {
         openFileItem.addActionListener(listener);
     }
 
-    public void addExitListener(ActionListener listener) {
+    public void addExitButtonListener(ActionListener listener) {
         exitItem.addActionListener(listener);
     }
 

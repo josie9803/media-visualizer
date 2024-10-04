@@ -17,13 +17,13 @@ public class ImageController {
         view.setVisible(true);
     }
     public void init(){
-        view.addOpenFileListener(new ActionListener() {
+        view.addOpenFileButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 handleFileOpen();
             }
         });
-        view.addExitListener(new ActionListener() {
+        view.addExitButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
@@ -34,7 +34,9 @@ public class ImageController {
         File selectedFile = view.showOpenFileDialog();
         if (selectedFile != null) {
             try {
-                BufferedImage image = model.loadBMP(selectedFile);
+                System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+                model.readBmpFile(selectedFile);
+                BufferedImage image = model.getImage();
                 view.updateImage(image);
             } catch (IOException e) {
                 view.showError("Error loading BMP file: " + e.getMessage());

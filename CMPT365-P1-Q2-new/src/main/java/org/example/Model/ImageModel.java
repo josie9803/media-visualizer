@@ -6,9 +6,9 @@ import java.io.File;
 import java.io.IOException;
 
 public class ImageModel {
-    public BufferedImage loadBMP(File bmpFile) throws IOException {
+    private BufferedImage image;
+    public void readBmpFile(File bmpFile) throws IOException {
         // Use Apache Commons Imaging to read the BMP file
-        BufferedImage image;
         try {
             image = Imaging.getBufferedImage(bmpFile);
         } catch (ImageReadException e) {
@@ -17,6 +17,8 @@ public class ImageModel {
         if (image == null) {
             throw new IOException("Invalid BMP file.");
         }
+    }
+    public BufferedImage getImage(){
         return image;
     }
 }
