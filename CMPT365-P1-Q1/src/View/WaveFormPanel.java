@@ -20,8 +20,8 @@ public class WaveFormPanel extends JPanel {
         super.paintComponent(g);
 
         g.setColor(Color.BLACK);
-        g.drawString("Total Samples: " + totalSamples, 10, 20);
-        g.drawString("Sample Rate: " + sampleRate + " Hz", 10, 40);
+        g.drawString("Total number of the samples: " + totalSamples, 10, 20);
+        g.drawString("Sampling frequency: " + sampleRate + " Hz", 10, 40);
 
         int boxX = 50;
         int boxY = 50;

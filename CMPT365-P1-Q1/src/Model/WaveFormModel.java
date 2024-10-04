@@ -39,8 +39,7 @@ public class WaveFormModel {
 
         samples = new int[][]{leftChannelSamples, rightChannelSamples};
         sampleRate = (int) audioFormat.getSampleRate();
-        totalSamples = samples[0].length;
-        printSamples();
+        totalSamples = samples[0].length + samples[1].length;
     }
     public int getSampleRate(){
         return sampleRate;
@@ -53,17 +52,4 @@ public class WaveFormModel {
     public int[][] getSamples() {
         return samples;
     }
-
-    //For testing purpose
-    private void printSamples() {
-        if (samples == null || samples.length != 2 || samples[0].length == 0) {
-            System.out.println("No samples available to print.");
-            return;
-        }
-
-        for (int i = 0; i < totalSamples; i++) {
-            System.out.printf("Sample %d: Left = %d, Right = %d%n", i + 1, samples[0][i], samples[1][i]);
-        }
-    }
-
 }
